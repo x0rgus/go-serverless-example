@@ -12,12 +12,12 @@ import (
 )
 
 func main() {
-	http.HandleFunc("/devices", devicesHandler)
+	http.HandleFunc("/devices", DevicesHandler)
 	log.Println("Servidor iniciado na porta :8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 
-func devicesHandler(w http.ResponseWriter, r *http.Request) {
+func DevicesHandler(w http.ResponseWriter, r *http.Request) {
 	// Configuração CORS básica
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Content-Type", "application/json")
